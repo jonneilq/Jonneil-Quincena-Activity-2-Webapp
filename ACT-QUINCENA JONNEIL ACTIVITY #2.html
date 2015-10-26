@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JonneilQ Blog page</title>
+		<style type="text/css">
+		* {
+			font-family: sans-serif;
+		}
+		section{
+			width:  100%
+		}
+		article{
+			background-color: PaleGreen   ;
+			padding: 10px;
+			margin: 5px;
+		}
+		.published{
+			background-color: Plum   ;
+		}
+		form div {
+			text-align: center;
+			padding: 5px;
+		}
+		input {
+			font-size: 20px;
+
+		}
+		label {
+			font-family: Georgia;
+			}
+		
+
+		</style>
+	</head>
+<body>
+	<section>
+		<article>
+		
+			<form>
+				<div>
+					<div>
+						<b><label><font size = "5" color="HotPink   ">Title</label>
+					</div>
+				<div>
+					<input type ='text' name = 'title' id = 'input_title' size = "50"/>
+				</div>
+			</div>
+			
+			<div>
+				<label>FirstName</label>
+			</div>
+			<div>
+				<input type ='text' name = 'firstname' id = 'first_name' size = "20"/>
+			</div>
+			<div>
+			
+			<div>
+				<label>MiddleName</label>
+			</div>
+			<div>
+				<input type ='text' name = 'middlename' id = 'middle_name' size = 5"/>
+			</div>
+			
+				<label>LastName</label>
+			</div>
+			<div>
+			
+				<input type ='text' name = 'lastname' id = 'last_name' size = "20" />
+			</div>
+			<div>
+				<label>Content</label>
+			</div>
+			<div>
+				<textarea name = 'content' id = 'input_content' rows = '10' cols = '100%' ></textarea>
+			</div>
+		</div>
+		</font>
+		<div>
+			<input type = 'button' value = 'submit' onClick = "postBlog()"/>
+		</div>
+			</form>
+		</article>
+		<article class = 'published'>
+			<h1 id ='title'></h1>
+			<h6 id = 'author'></h6>
+			<p id = 'content'></p>
+		</article>
+	</section>
+	<footer><center>Thank you! All rights reserved 2015</footer>
+	<script type="text/javascript">
+	function postBlog(){
+		var input_title = document.getElementById('input_title').value;
+		var first_name = document.getElementById('first_name').value;
+		var middle_name = document.getElementById('middle_name').value;
+		var last_name = document.getElementById('last_name').value;
+		var input_content = document.getElementById('input_content').value;
+		document.getElementById('title').innerHTML = input_title;
+		var date_today = new Date();
+		document.getElementById('author').innerHTML = first_name + " " + middle_name + " " + last_name + '' + date_today;
+		document.getElementById('content').innerHTML = input_content;
+	}
+	</script>
+</body>
+</html>
